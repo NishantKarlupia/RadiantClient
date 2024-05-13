@@ -1,0 +1,23 @@
+<div class="login-container">
+  <div class="bootstrap-wrapper content-container">
+    <div class="heading">Sign In</div>
+    <div class="form-container">
+      <form  (ngSubmit)="formSubmit()">
+        <p class="text-label" style="color: blue">Sign in with account name</p>
+        <input type="text" class="input-box" name="username" [(ngModel)]="loginData.username" />
+        <p class="text-label">Password</p>
+        <input type="password" class="input-box" name="password" [(ngModel)]="loginData.password" />
+
+        <!-- <button type="submit">Sign In</button> -->
+        <div class="login-button-container">
+          <button mat-raised-button class="login-button" type="submit">Sign In</button>
+        </div>
+
+      </form>
+        <div class="register-link mt20">
+            <span>Don't have account?</span> <span><a routerLink="/signup"> Register here</a></span>
+        </div>
+
+    </div>
+  </div>
+</div>

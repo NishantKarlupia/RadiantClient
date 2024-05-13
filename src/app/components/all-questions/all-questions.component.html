@@ -1,0 +1,41 @@
+<div class="questions-container mb20">
+    <div class="forum-container">
+        <h1 style="color: rgb(222, 222, 232);">Welcome to Radiant forum</h1>
+        <div class="welcome-container">
+            <div class="mb20">Open To All: <span class="point-desc">This forum is open to all, you are not required to
+                    signin or singup for reading the question.</span></div>
+            <div>Things to consider: <span class="point-desc"> This page is dedicated to serve a good cause, please do
+                    not involve in any fight or abusive war with other games. Actions will be taken against such
+                    users.</span></div>
+        </div>
+        <button (click)="askQuestion()" style="cursor: pointer;">Ask a Question</button>
+    </div>
+
+    <div class="all-questions-container mt20">
+        <!-- all questions comes here -->
+        <h2>Questions by other Gamers</h2>
+
+        <div class=" mb20" *ngFor="let question of questionsData">
+            <mat-card class="card" >
+                <mat-card-header>
+                    <mat-card-title id="card-title">{{question.title}}</mat-card-title>
+                    <mat-card-subtitle id="card-username"> ( by {{question.user.username}} )</mat-card-subtitle>
+                </mat-card-header>
+
+                <mat-card-content>
+                    <!-- <p [innerHTML]="question.description.split(' ').slice(0,15).join(' ')+'...'"></p> -->
+                    <p [innerHTML]="question.description.split(' ').length > 15 ? question.description.split(' ').slice(0, 15).join(' ') + '...' : question.description"></p>
+                    <mat-divider></mat-divider>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button color="accent" [routerLink]="'/question/'+question.quesId">View Question</button>
+                </mat-card-actions>
+            </mat-card>
+
+        </div>
+
+
+    </div>
+
+
+</div>

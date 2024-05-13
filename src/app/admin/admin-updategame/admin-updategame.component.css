@@ -1,0 +1,49 @@
+.game-container{
+    padding: 10px;
+    /* border: 1px solid red; */
+    width: 80%;
+    color: white;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.heading{
+    /* border: 1px solid red; */
+    text-align: center;
+    font-family: consolas;
+    font-size: 20px;
+    padding: 10px;
+    margin: 25px auto;
+}
+
+
+:host ::ng-deep .ck-editor__editable_inline {
+    min-height: 250px;
+    color: black;
+}
+
+
+.submit-button-container{
+    /* border: 2px solid red; */
+    width: 40%;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    
+}
+
+.submit-button{
+    /* text-transform: uppercase; */
+    width: 100%;
+    font-weight: 600;
+    font-family: "Motiva Sans", Sans-serif;
+    background: linear-gradient(to right, #06bfff 50%, #2b74ff 100%);
+    margin-top: 20px;
+    padding: 20px 15px;
+    border-radius: 3px;
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.16));
+    font-size: 15px;
+    margin: auto;
+}

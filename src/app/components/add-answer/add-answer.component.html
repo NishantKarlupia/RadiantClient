@@ -1,0 +1,26 @@
+<div class="answer-container">
+    <div class="content-container">
+
+        <h1 class="heading">Write you answer below</h1>
+        <div class="instructions">
+            <h4>Please Read the instructions carefully before proceeding.</h4>
+            <ul>
+                <li>Please write answer related to the question asked.</li>
+                <li>Do not advertise any thing.</li>
+                <li>Never include any abusive language.</li>
+                <li>All here are gamers.</li>
+            </ul>
+        </div>
+        <form (ngSubmit)="submitAnswer()">
+            
+            <div class="answer-content">
+                <ckeditor [editor]="Editor" data="" name="description" [(ngModel)]="answerData.answer" ></ckeditor>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="mt10" mat-raised-button color="primary">Add Answer</button>    
+            </div>
+            
+        </form>
+
+    </div>
+</div>

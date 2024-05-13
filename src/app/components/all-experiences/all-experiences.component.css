@@ -1,0 +1,67 @@
+.parent-container{
+    border: 0px solid red;
+}
+
+
+.welcome-container{
+    /* border: 1px solid blue; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    border-bottom: 2px solid gray;
+
+}
+
+.instructions{
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
+}
+
+.point{
+    margin-top: 20px;
+}
+
+.point-heading{
+    color: yellow;
+    margin-top: 50px;
+}
+
+.experience-container{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+}
+
+
+.card {
+    width: 85%;
+    background: linear-gradient(to bottom right, #044a78, #066106); 
+    background: linear-gradient(to bottom right, #760a54e8, #2196f3); 
+    /* background: linear-gradient(to bottom right, #3193d4, #17b017);*/
+}
+
+
+#card-username{
+    color: yellow;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 13px;
+    padding: 15px 0;
+}
+
+
+#card-title{
+    text-transform: uppercase;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Times New Roman', Times, serif;
+
+}
+
+
+
+
+
+
+

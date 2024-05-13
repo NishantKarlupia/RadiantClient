@@ -1,0 +1,35 @@
+.answer-container{
+    border: 0px solid red;
+}
+
+.content-container{
+    border: 1.5px solid rgba(4, 4, 248, 0.97);
+    width: 75%;
+    margin: auto;
+    margin-top: 20px;
+
+    padding: 20px 20px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.heading{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+}
+
+.instructions{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.instructions ul li{
+    font-size: 13px;
+}
+
+
+
+:host ::ng-deep .ck-editor__editable_inline {
+    min-height: 200px;
+    color: black;
+}

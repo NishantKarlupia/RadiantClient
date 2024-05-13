@@ -1,0 +1,147 @@
+.stone-container {
+    /* border: 2px solid red; */
+    /* margin-top: 100px; */
+    padding: 50px 100px;
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: 200;
+    /* width: 100%; */
+    height: 85vh;
+    background-image: url("../../../assets/images/about-intro-image.jpg");
+    background-size: cover;
+    
+    /* background: #1d2227; */
+    
+}
+
+
+
+.install-button{
+    /* border: 2px solid red; */
+    text-transform: uppercase;
+    font-family: "Motiva Sans", Sans-serif;
+    background: linear-gradient(to right, #06bfff 50%, #2b74ff 100%);
+    margin-top: 20px;
+    padding: 20px 15px;
+    border-radius: 3px;
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.16));
+    font-size: 20px;
+}
+/* .install-container{
+    border: 2px solid blue;
+} */
+
+body,html{
+    background: #1d2227 !important;
+}
+
+.stone-image-container img{
+    /* border: 2px solid red; */
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.about-access-container{
+    height: 100vh;
+    margin-top: 20vh;
+    background-image: url("../../../assets/images/about-access-container.jpg");
+    background-size: cover;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.access-container-text , .community-container-text{
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    width: 50%;
+    border: 0px solid red;
+}
+
+
+.about-access-container h1, .community-container-text h1, .feature-container-heading h1{
+    font-weight: 800;
+    font-size: 50px;
+}
+
+.about-community-container{
+    height: 100vh;
+    margin-top: 20vh;
+    background-image: url("../../../assets/images/about-community-container.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.about-feature-container{
+    /* border: 2px solid red; */
+    height: 100vh;
+    margin-top: 20vh;
+    padding-top: 50px;
+}
+
+.feature-container-heading{
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    width: 50%;
+    border: 0px solid red;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.feature-container-heading, .feature-container-items{
+    border: 0px solid blue;
+}
+
+.feature-container-items{
+    width: 70%;
+    margin: auto;
+}
+
+.example-card {
+    max-width: 400px;
+    margin-bottom: 70px;
+    background: #141414;
+}
+
+.feature-card{
+    padding: 5px;
+    /* border: 1px solid red; */
+
+}
+
+.feature-icon button{
+    background-color: #292929;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 15px;
+
+}
+
+.feature-icon img{
+    height: 50px;
+    width: 50px;
+    /* border-radius: 50%; */
+    /* border: 1px solid white; */
+}
+.feature-title{
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.feature_text {
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: 300;
+}
+
+
+

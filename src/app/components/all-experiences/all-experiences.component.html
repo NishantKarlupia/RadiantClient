@@ -1,0 +1,43 @@
+<div class="parent-container">
+    <div class="welcome-container">
+        <div class="welcome-heading">
+            <h1>We Welcome you to share your experience</h1>
+        </div>
+        <div class="instructions">
+            <div class="point">
+                <span class="point-heading">Share: </span><span>Share your gaming experience to others.</span>
+            </div >
+            <div  class="point">
+                <span class="point-heading">Achivements: </span><span>Show others your in-game achivements and ranks.</span>
+            </div>
+            <div class="point">
+                <span class="point-heading">Join: </span><span>View other gamers and see which people you want to join in their teams.</span>
+            </div>
+            <div class="point mb20">
+                <span class="point-heading">Signup: </span><span>You need to be a registered user to share you experience.</span>
+            </div>
+        </div>
+
+        <div>
+            <button (click)="addExperience()" style="cursor: pointer;">Share yours</button>
+        </div>
+    </div>
+
+    <div class="experience-container">
+        <h2>Experiences of other gamers</h2>
+
+        <div class=" mb20" *ngFor="let experience of experiences">
+            <mat-card class="card" >
+                <mat-card-header>
+                    <mat-card-title id="card-title">{{experience.title}}</mat-card-title>
+                    <!-- <mat-card-subtitle id="card-username"> ( by {{experience.user.username}} )</mat-card-subtitle> -->
+                </mat-card-header>
+
+                <mat-card-content>
+                    <p [innerHTML]="experience.description"></p>
+                </mat-card-content>
+                <mat-divider></mat-divider>
+            </mat-card>
+        </div>
+    </div>
+</div>

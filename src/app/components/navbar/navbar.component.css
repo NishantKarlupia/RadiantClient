@@ -1,0 +1,19 @@
+
+.navbar-container{
+    border: 0px solid red;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+/* 
+body{
+    background: #121212;
+    background-color: white !important;
+}   */

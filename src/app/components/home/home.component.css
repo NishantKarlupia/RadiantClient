@@ -1,0 +1,29 @@
+.home-container{
+    /* border: 1px solid rebeccapurple; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 82vh;
+    background-image: url("../../../assets/images/home_background.jpg");
+    background-image: url("../../../assets/images/background.jpg");
+
+    /* background-repeat: no-repeat; */
+    /* object-fit: fill; */
+    background-size:cover;
+    background-position: center;
+    
+}
+
+
+h1{
+    font-size: 70px;
+    color: white;
+    /* font-weight:600; */
+}
+p{
+    font-size: 30px;
+    /* color: black; */
+    font-weight:400;
+}
+

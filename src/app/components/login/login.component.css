@@ -1,0 +1,79 @@
+.login-container{
+    background-image: url("../../../assets/images/about-community-container.jpg");
+    height: 100vh;
+    /* border: 1px solid blue; */
+    background-size: cover;
+    position: relative;
+}
+
+.content-container{
+    /* border: 1px solid red; */
+    width: 50%;
+    /* margin: auto; */
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    /* margin-top: 50px; */
+    font-family: sans-serif;
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: 500;
+}
+.heading{
+    font-size: 30px;
+    color: white;
+    margin-bottom: 30px;
+    font-weight: 600;
+
+}
+
+.form-container{
+    /* border: 1px solid red; */
+    padding: 20px;
+    background-color: black;
+}
+
+.input-box{
+    background-color: rgb(36, 35, 35);
+    width: 100%;
+    /* height: 25px; */
+    padding: 10px;
+    margin-bottom: 15px;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 15px;
+}
+.text-label{
+    text-transform: uppercase;
+}
+
+.login-button-container{
+    /* border: 2px solid red; */
+    width: 40%;
+    margin: 10px auto;
+    
+}
+
+.login-button{
+    /* text-transform: uppercase; */
+    width: 100%;
+    font-weight: 600;
+    font-family: "Motiva Sans", Sans-serif;
+    background: linear-gradient(to right, #06bfff 50%, #2b74ff 100%);
+    margin-top: 20px;
+    padding: 20px 15px;
+    border-radius: 3px;
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.16));
+    font-size: 15px;
+    margin: auto;
+}
+
+.register-link{
+    text-align: center;
+    color: gray;
+    
+}
+.register-link a{
+    color: blue;
+}
+

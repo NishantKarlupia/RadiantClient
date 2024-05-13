@@ -1,0 +1,102 @@
+<div class="game-container">
+    <mat-card style="padding: 15px;">
+        <div class="heading">
+            Fill the detils below to add a new game.
+        </div>
+
+        <form (ngSubmit)="formSubmit()" enctype="multipart/form-data">
+
+            <mat-form-field class="full-width" appearance="fill" color="primary">
+                <mat-label style="color: white;">Gamename</mat-label>
+                <input type="text" matInput name="gamename" [(ngModel)]="gameData.gamename">
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="fill" color="primary">
+                <mat-label style="color: white;">Description</mat-label>
+                <textarea name="" id="" cols="30" rows="5" matInput name="description" [(ngModel)]="gameData.description" ></textarea>
+            </mat-form-field>
+
+            <div class="mb20">
+                <mat-label style="color: white;">Cover Image:&nbsp;</mat-label>
+                <input type="file" name="coverImage" #fileInput (change)="onImageChange($event)">
+            </div>
+            
+            <div class="mb20">
+                <mat-label style="color: white;">Gameplay Images:&nbsp;</mat-label>
+                <input type="file" name="gamePlayImages" #fileInput (change)="onGamePlayImagesChange($event)" multiple>
+            </div>
+
+            <mat-form-field class="full-width" appearance="fill" color="primary">
+                <mat-label style="color: white;">Video URL</mat-label>
+                <input type="text" matInput name="video" [(ngModel)]="gameData.video" >
+            </mat-form-field>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="full-width" appearance="fill" color="primary">
+                        <mat-label style="color: white;">Price</mat-label>
+                        <input type="number" matInput name="price" [(ngModel)]="gameData.price" >
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="full-width" appearance="fill" color="primary">
+                        <mat-label style="color: white;">Discount</mat-label>
+                        <input type="number" matInput name="discount" [(ngModel)]="gameData.discount" >
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <mat-form-field class="full-width" appearance="fill" color="primary">
+                <mat-label style="color: white;">Categories (separated by commas)</mat-label>
+                <input type="text" matInput name="categories" [(ngModel)]="gameData.categories">
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="fill" color="primary">
+                <mat-label style="color: white;">Platform (separated by commas)</mat-label>
+                <input type="text" matInput name="platform" [(ngModel)]="gameData.platform" >
+            </mat-form-field>
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="full-width" appearance="fill" color="primary">
+                        <mat-label style="color: white;">Publisher/Developer</mat-label>
+                        <input type="text" matInput name="publisher" [(ngModel)]="gameData.publisher" >
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="full-width" appearance="fill" color="primary">
+                        <mat-label style="color: white;">Release Date</mat-label>
+                        <input type="text" matInput name="releaseDate" [(ngModel)]="gameData.releaseDate" >
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <!-- <mat-form-field>
+                <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" ></ckeditor>
+            </mat-form-field> -->
+            <ckeditor [editor]="Editor" data="" name="requirements" [(ngModel)]="gameData.requirements" ></ckeditor>
+
+            <div class="submit-button-container">
+                <button mat-raised-button class="submit-button" type="submit">Add</button>
+              </div>
+
+        </form>
+    </mat-card>
+</div>
+
+<!-- {{gameData|json}} -->
+
+
+<!-- 
+    gamename
+    description
+    image
+    images:set
+    video
+    price,discount<=100%
+    categories:set
+    platform:set
+    publisher,releaseDate
+    requirements: ckeditor
+ -->

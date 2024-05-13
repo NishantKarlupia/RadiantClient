@@ -1,0 +1,28 @@
+<div class="question-container" >
+    <div class="content-container bootstrap-wrapper">
+        <div class="first-tile">
+            <div class="title"> {{questionData.title}} </div>
+            <div class="user"> (by {{questionData.user.username}})  <button *ngIf="sameUser" mat-button (click)="deleteQuestion(questionData.quesId)">remove</button> </div>
+        </div>
+        <div class="description mt20" [innerHTML]="questionData.description">
+
+        </div>
+        <div class="images row">
+            <div class="col-md-12 questionImage" *ngFor="let image of questionData.images">
+                <img [src]="'data:image/jpg;base64,'+image" alt="not able to process image">
+            </div>
+        </div>
+    </div>
+    <div class="add-answer" *ngIf="loggedUser!=null && sameUser==false">
+        <button [routerLink]="'/answer/question/'+questionData.quesId">Add Answer</button>
+    </div>
+</div>
+
+
+
+<div class="answer-container">
+    <div class="answer-content-container" *ngFor="let answer of answersData">
+        <div class="user" style="color: rgb(17, 219, 152);"> (by {{answer.user.username}})</div>
+        <div class="description mt20" [innerHTML]="answer.answer">
+    </div>
+</div>

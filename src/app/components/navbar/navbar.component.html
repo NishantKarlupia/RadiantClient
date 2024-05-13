@@ -1,0 +1,34 @@
+<div class="navbar-container">
+  <mat-toolbar style="background-color: #1b1a22; height: 100px;">
+    
+    <span class="example-spacer"></span>
+    
+    
+    <a routerLink=""><h1 style="margin-right: 100px;">Radiant</h1></a>
+    <a routerLink="/store"> <h1 style="font-weight: 400;">Store</h1></a>
+    
+    <a routerLink="/community"><h1 class="ml20 mr20" style="margin-right: 20px; margin-left: 20px; font-weight: 400;">Community</h1></a>
+    <a routerLink="/about"><h1 style="font-weight:400;" >About</h1></a>
+    
+    <span class="example-spacer"></span>
+    
+    @if (isLoggedIn) {
+      <button routerLink={{account_path}} mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon style="transform: scale(1.3);">account_circle</mat-icon>
+        <!-- <mat-icon svgIcon="account_circle"></mat-icon> -->
+      </button>
+    }
+    
+    @if (!isLoggedIn) {
+      <button routerLink="/login" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon >login</mat-icon>
+      </button>
+    }
+    @if(isLoggedIn){
+      <button (click)="logout()" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon >logout</mat-icon>
+      </button>
+    }
+  </mat-toolbar>
+  
+</div>

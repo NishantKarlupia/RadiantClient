@@ -1,0 +1,55 @@
+<div class="signup-container">
+  <div class="bootstrap-wrapper content-container">
+    <div class="heading">create Your account</div>
+    <div class="form-container">
+      <form (ngSubmit)="formSubmit()">
+        <p>Username</p>
+        <input
+          name="username"
+          [(ngModel)]="userData.username"
+          class="input-box"
+          required
+        />
+        <p>Email Address</p>
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="userData.email"
+          class="input-box"
+          required
+        />
+        <p>Password</p>
+        <input
+          type="password"
+          name="password"
+          [(ngModel)]="userData.password"
+          class="input-box"
+          required
+        />
+
+        <div class="container-fluid">
+
+          <div class="row referal">
+            <div class="col-md-4">Have a referal code?</div>
+            <div class="col-md-4">
+              <input type="text" name="referal" [(ngModel)]="userData.referal">
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+        </div>
+
+        <div class="signup-button-container">
+          <button mat-raised-button class="signup-button" type="submit">
+            Register
+          </button>
+        </div>
+      </form>
+
+      <div class="register-link mt20">
+        <span>Already have an account?</span> <span><a routerLink="/login"> Login here</a></span>
+    </div>
+
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="question-container">
+
+    <div class="bootstrap-wrapper content-container">
+        <div class="row">
+            <div class="col-md-3 instructions">
+                <h2 style="color: yellow;">Instructions</h2>
+                <ul class="instruction-points">
+                    <li>This forum is for gaming purpose only.</li>
+                    <li>Ask your query related to gaming or gaming news.</li>
+                    <li>No political, personal, or product advertisement allowed.</li>
+                    <li>Reduntant post can be deleted by Admin.</li>
+                    <li>Users involved in following unlawful practices, their account can be banned for some time.</li>
+                </ul>
+            </div>
+            <div class="col-md-9 question-model">
+                <h3>Ask your Question</h3>
+                <form (ngSubmit)="submitQuestion()">
+                
+                    <div class="question">
+                        <div>
+                            <input type="text" name="title" placeholder="title" class="title-input mb20 mt20" [(ngModel)]="question.title">
+                        </div>
+                        <div>
+                            <ckeditor [editor]="Editor" data="" name="description" [(ngModel)]="question.description" ></ckeditor>
+
+                        </div>
+                        <div class="mt10">
+                            <label for="">Have any Images?</label>&nbsp;&nbsp;
+                            <input type="file" name="images" #fileInput (change)="onImagesChange($event)" multiple placeholder="upload">
+                        </div>
+
+                        <div class="mt20 text-center">
+                            <button type="submit" mat-raised-button color="accent">Submit</button>
+                        </div>
+
+                    </div>
+                
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,56 @@
+
+
+<div class="expereince-container">
+
+    <div class="bootstrap-wrapper content-container">
+        <div class="row">
+            <div class="col-md-4 instructions">
+                <h2 style="color: yellow;">Instructions</h2>
+                <ul class="instruction-points">
+                    <li>This forum is for gaming purpose only.</li>
+                    <li>Sahre your experienc of gaming or similar.</li>
+                    <li>No political, personal, or product advertisement allowed.</li>
+                    <li>Reduntant post can be deleted by Admin.</li>
+                    <li>Users involved in following unlawful practices, their account can be banned for some time.</li>
+                </ul>
+            </div>
+            <div class="col-md-8 expereince-model">
+                <h3 style="color: yellow;">Write you experience</h3>
+                <form (ngSubmit)="submitForm()">
+                
+                    <div class="experience">
+                        <div>
+                            <input type="text" name="title" placeholder="title" class="title-input mb20 mt20" [(ngModel)]="experienceData.title">
+                        </div>
+                        <div>
+                            <ckeditor [editor]="Editor" data="" name="description" [(ngModel)]="experienceData.description" ></ckeditor>
+                        </div>
+                        <div>
+                            <input type="text" name="tags" placeholder="tags" class="title-input mb20 mt20" [(ngModel)]="experienceData.tags">
+                        </div>
+                        <div class="mt10">
+                            <label for="">Have any Images?</label>&nbsp;&nbsp;
+                            <input type="file" name="images" #fileInput (change)="onImagesChange($event)" multiple placeholder="upload">
+                        </div>
+
+                        <div class="mt20 text-center">
+                            <button type="submit" mat-raised-button color="accent">Submit</button>
+                        </div>
+
+                    </div>
+                
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+<!-- title
+description
+images
+tags -->
