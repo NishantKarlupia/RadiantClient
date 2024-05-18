@@ -1,1 +1,56 @@
-<p>store works!</p>
+<div class="parent-container">
+    <div class="store-container">
+        <div class="now-available" *ngIf="nowAvailable" (click)="openGame(nowAvailable.gid)">
+            <img [src]="'data:image/jpg;base64,'+nowAvailable.coverImage" alt="coverImage">
+            <h1>Now Available</h1>
+        </div>
+
+        <div class="featured-container" *ngIf="featured">
+            <h3 class="featured-heading">featured & Recommended</h3>
+
+            <div class="random-games-container bootstrap-wrapper" (click)="openGame(featured[random_index].gid)">
+                <div class="row">
+                    <div class="col-md-8" style="padding: 0;">
+                    <img [src]="'data:image/jpg;base64,'+featured[random_index].coverImage" alt="coverImage">
+                        
+                    </div>
+                    <div class="col-md-4 random-game-right" >
+                        <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{featured[random_index].gamename}}</h3>
+                        <!-- <p class="random-game-desc">{{featured[random_index].description}}</p> -->
+                        <p class="random-game-desc" [innerHTML]="featured[random_index].description.split(' ').length > 50 ? featured[random_index].description.split(' ').slice(0, 50).join(' ') + '...' : featured[random_index].description"></p>
+                        <h4>Now Available</h4>
+                        <h5>{{featured[random_index].price | currency:"INR"}}</h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="special-offers-container" *ngIf="special_offers">
+            <h3 class="featured-heading">special offers</h3>
+            <div class="random-games-container bootstrap-wrapper" (click)="openGame(special_offers[special_index].gid)">
+                <div class="row">
+                    <div class="col-md-8" style="padding: 0;">
+                    <img [src]="'data:image/jpg;base64,'+special_offers[special_index].coverImage" alt="coverImage">
+                        
+                    </div>
+                    <div class="col-md-4 random-game-right" >
+                        <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{special_offers[special_index].gamename}}</h3>
+                        <p class="random-game-desc" [innerHTML]="special_offers[special_index].description.split(' ').length > 50 ? special_offers[special_index].description.split(' ').slice(0, 50).join(' ') + '...' : special_offers[special_index].description"></p>
+                        <h4>Now Available</h4>
+                        <div style="display: flex;">
+                            <h5 style="text-decoration: line-through;">{{special_offers[special_index].price | currency:"INR"}}</h5>
+                            <h5 class="discounted_price">{{special_offers[special_index].price- (special_offers[special_index].price*special_offers[special_index].discount/100) | currency:"INR"}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        
+
+
+    </div>
+</div>

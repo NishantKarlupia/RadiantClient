@@ -13,4 +13,16 @@ export class GameService {
     return this._http.get(`${baseUrl}/games/${gid}`)
   }
 
+  public getGameByName(gname:any){
+    return this._http.get(`${baseUrl}/games/game/${gname}`)
+  }
+
+  public getRandomGames(){
+    return this._http.get(`${baseUrl}/games/random`)
+  }
+
+  public getRandomGamesWithDiscount(){
+    return this._http.get(`${baseUrl}/games/random/discount`)
+  }
+
 }

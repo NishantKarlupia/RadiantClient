@@ -4,6 +4,8 @@ import { QuestionService } from '../../services/question.service';
 import { LoginService } from '../../services/login.service';
 import Swal from 'sweetalert2';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-question',
@@ -12,7 +14,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class QuestionComponent {
 
-  constructor(private _route:ActivatedRoute,private _quesService:QuestionService,private _login:LoginService,private _snack:MatSnackBar,private _router:Router){}
+  constructor(private _route:ActivatedRoute,private _quesService:QuestionService,private _login:LoginService,private _snack:MatSnackBar,private _router:Router,private _toast:ToastrService){}
 
   questionData:any={
     title:"",
@@ -92,6 +94,46 @@ export class QuestionComponent {
         console.log("no")
       }
     })
+
+  }
+
+
+  likeAnswer(ansId:any){
+
+    
+    
+
+    this._quesService.likeAnswer(ansId).subscribe(
+      (data)=>{
+        this._toast.info("you liked this answer","",{
+          progressBar:true,
+          closeButton:true,
+          timeOut:2000
+        })
+        
+      },
+      (error)=>{
+        this._snack.open("Internal Server Error","",{duration:2000})
+      }
+    )
+
+  }
+
+  dislikeAnswer(ansId:any){
+
+    
+    this._quesService.dislikeAnswer(ansId).subscribe(
+      (data)=>{
+        this._toast.info("you disliked this answer","",{
+          progressBar:true,
+          closeButton:true,
+          timeOut:2000
+        })
+      },
+      (error)=>{
+        this._snack.open("Internal Server Error","",{duration:2000})
+      }
+    )
 
   }
 

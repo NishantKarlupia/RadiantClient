@@ -48,7 +48,7 @@
 }
 
 .answer-content-container{
-    border: 2px solid gray;
+    /* border: 2px solid gray; */
     width: 80%;
     margin: 20px auto;
     padding: 10px;
@@ -63,4 +63,39 @@
 }
 
 
+
+.card {
+    width: 85%;
+    /* background: linear-gradient(to bottom right, #044a78, #066106); Light blue to light green gradient */
+    background: linear-gradient(to bottom right, #54a0d3, #2c8e2c); /* Light blue to light green gradient */
+}
+
+
+#card-username{
+    color: yellow;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 13px;
+    padding: 15px 0;
+}
+
+
+#card-title{
+    text-transform: uppercase;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Times New Roman', Times, serif;
+
+}
+
+.like-button,
+.dislike-button {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 15px;
+    
+}
+
+.like-button button,
+.dislike-button button {
+    margin: -5px;
+}
 

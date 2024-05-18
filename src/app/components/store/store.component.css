@@ -1,0 +1,83 @@
+
+
+
+.now-available{
+    /* border: 1px solid red; */
+    position: relative;
+    cursor: pointer;
+}
+.now-available img{
+    width: 100%;
+    height: 400px;
+}
+
+.now-available h1{
+    position: absolute; 
+    top: 45%; 
+    left: 30%; 
+    transform: translate(-50%, -50%); 
+    z-index: 1; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:cursive;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: black;
+}
+
+.featured-heading{
+    width: 70%;
+    margin: auto;
+    text-transform: uppercase;
+    /* border: 1px solid red; */
+    padding: 10px 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.random-games-container{
+    /* border: 1px solid blue; */
+    width: 70%;
+    margin: auto;
+    height: 370px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.random-games-container img{
+    width: 100%;
+    height: 330px;
+    display: block;
+}
+
+.random-game-right{
+
+    background: rgb(22, 21, 21);
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.random-game-desc{
+    font-size: 15px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.discounted_price{
+    margin-left: 20px;
+    background-color: rgb(36, 180, 36);
+    padding: 3px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+

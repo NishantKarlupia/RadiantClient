@@ -35,5 +35,13 @@ export class QuestionService {
     return this._http.get(`${baseUrl}/answer/question/${quesId}`)
   }
 
+  public likeAnswer(ansId:any){
+    return this._http.put(`${baseUrl}/answer/like/${ansId}`,ansId);
+  }
+  
+  public dislikeAnswer(ansId:any){
+    return this._http.put(`${baseUrl}/answer/dislike/${ansId}`,ansId);
+  }
+
 
 }

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { AdminService } from '../../services/admin.service';
+import Swal from 'sweetalert2';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-admin-addgame',
@@ -11,7 +14,7 @@ export class AdminAddgameComponent {
 
   public Editor = ClassicEditor;
 
-  constructor(private _service:AdminService){}
+  constructor(private _service:AdminService, private _snack:MatSnackBar){}
 
   coverImage!:File ;
   gamePlayImages!:File[];
@@ -57,10 +60,15 @@ export class AdminAddgameComponent {
     
     this._service.addGame(formData).subscribe(
       (data)=>{
-        console.log(data)
+        // console.log(data)
+        Swal.fire({
+          title:"Success",
+          text:"Game Added Successfully",
+          "icon":"info"
+        })
       },
       (error)=>{
-        console.log(error)
+        this._snack.open("Internal Server Error","",{duration:2000})
       }
     )
 

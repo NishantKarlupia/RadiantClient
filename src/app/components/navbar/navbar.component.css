@@ -1,6 +1,9 @@
 
 .navbar-container{
+    
     border: 0px solid red;
+    /* border: 1px solid red; */
+
 }
 
 .example-spacer {
@@ -11,6 +14,16 @@ a{
     text-decoration: none;
     color: white;
 }
+
+.links-container{
+    /* border: 1px solid blue; */
+    display: flex;
+}
+.links-container a{
+    padding: 0 5px;
+}
+
+
 
 /* 
 body{
