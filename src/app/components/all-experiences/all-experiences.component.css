@@ -17,6 +17,7 @@
     /* border: 1px solid blue; */
     display: flex;
     flex-direction: column;
+    font-size: 17px;
 }
 
 .point{
@@ -36,32 +37,37 @@
 }
 
 
-.card {
-    width: 85%;
-    background: linear-gradient(to bottom right, #044a78, #066106); 
-    background: linear-gradient(to bottom right, #760a54e8, #2196f3); 
-    /* background: linear-gradient(to bottom right, #3193d4, #17b017);*/
+.experience-card{
+    /* border: 1px solid red; */
+    background-color: #16202d;
+    background-color: #0d131b;
+    background-color: #032247;
+    margin-bottom: 20px;
+}
+.experience-heading{
+    /* border: 1px solid blue; */
+    background-color: #223d5a;
+    background-color: #0a182b;
+    display: flex;
+    justify-content: space-between;
 }
 
+.experience-title{
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding: 15px;
+}
 
-#card-username{
+.experience-user{
+    font-size: 14px;
+    padding: 20px;
+    font-family: sans-serif;
     color: yellow;
-    font-family:'Courier New', Courier, monospace;
-    font-size: 13px;
-    padding: 15px 0;
 }
 
-
-#card-title{
-    text-transform: uppercase;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-family:'Times New Roman', Times, serif;
-
+.experience-description{
+    padding: 30px 15px 15px 15px;
+    font-size: 17px;
+    min-height: 120px;
 }
-
-
-
-
-
-
-

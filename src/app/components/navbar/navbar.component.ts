@@ -27,8 +27,9 @@ export class NavbarComponent {
       let role=this._login.getUserRole()
       // console.log(role)
 
-      if(this.isLoggedIn){if(role=="ADMIN")this.account_path="/admin"; else this.account_path="/store"}
+      if(this.isLoggedIn){if(role=="ADMIN")this.account_path="/admin"; else this.account_path=`/user`}
       else this.account_path="/store"
+      console.log(this.account_path)
     })
   }
 

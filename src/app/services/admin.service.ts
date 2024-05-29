@@ -26,5 +26,9 @@ export class AdminService {
     return this._http.put(`${baseUrl}/games/update`,gameData)
   }
 
+  public getAdminData(){
+    return this._http.get(`${baseUrl}/users/admin-data`)
+  }
+
 
 }

@@ -1,22 +1,25 @@
-
-
 <div class="games-container">
-    <div class="bootstrap-wrapper game-card" *ngFor="let game of games" >
-        <div class="row"  >
-            <div class="col-md-2 left">
-                <img [src]="'data:image/jpg;base64,'+game.coverImage" alt="" (click)="navigateToGame(game.gid)">
-            </div>
-            <div class="col-md-10 right">
-                <div class="line" >
-                    <div>{{game.gamename}}</div>
-                    <div>release date: {{game.releaseDate}}</div>
+    <div *ngIf="games">
+        <div class="bootstrap-wrapper game-card" *ngFor="let game of games">
+            <div class="row">
+                <div class="col-md-2 left">
+                    <img [src]="'data:image/jpg;base64,'+game.coverImage" alt="" (click)="navigateToGame(game.gid)">
                 </div>
-                <div class="line" >
-                    <div>{{game.platform}}</div>
-                    <div style="font-family: consolas;"> {{game.categories}} </div>
-                    <div>{{game.price| currency:"INR"}}</div>
+                <div class="col-md-10 right">
+                    <div class="line">
+                        <div>{{game.gamename}}</div>
+                        <div>release date: {{game.releaseDate}}</div>
+                    </div>
+                    <div class="line">
+                        <div>{{game.platform}}</div>
+                        <div style="font-family: consolas;"> {{game.categories}} </div>
+                        <div>{{game.price| currency:"INR"}}</div>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div *ngIf="games==null">
+        <h2>Loading All Games...</h2>
     </div>
 </div>

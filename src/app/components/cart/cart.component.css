@@ -1,0 +1,32 @@
+.parent-container{
+    border: 0px solid red;
+}
+
+.cart-container{
+    /* border: 1px solid blue; */
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    margin-top: 50px;
+    padding: 50px;
+    background-color:#0f1a28d0;
+}
+.cart-heading{
+    font-size: 50px;
+    margin-bottom: 50px;
+    color: yellow;
+}
+.cart-item{
+    /* border: 1px solid red; */
+    margin: auto;
+    margin-top: 10px;
+    font-size: 20px;
+    width: 90%;
+    padding: 20px;
+}
+/* 
+.buy-button{
+
+} */
+
+

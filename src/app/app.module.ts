@@ -23,7 +23,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { authInterceptorProviders } from './services/auth.interceptor';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { AdminSidebarComponent } from './admin/admin-sidebar/admin-sidebar.component';
-import { StatComponent } from './admin/stat/stat.component';
 import {MatListModule} from '@angular/material/list';
 import { AdminAllgamesComponent } from './admin/admin-allgames/admin-allgames.component';
 import { AdminAddgameComponent } from './admin/admin-addgame/admin-addgame.component';
@@ -40,6 +39,14 @@ import { AllExperiencesComponent } from './components/all-experiences/all-experi
 import { AddExperienceComponent } from './components/add-experience/add-experience.component';
 import { ToastrModule } from 'ngx-toastr';
 import { FooterComponent } from './components/footer/footer.component';
+import { CategoryComponent } from './components/category/category.component';
+import { AdminStatsComponent } from './admin/admin-stats/admin-stats.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { CartComponent } from './components/cart/cart.component';
+import { UserSidebarComponent } from './components/user-sidebar/user-sidebar.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { UserGamesComponent } from './components/user-games/user-games.component';
+import { UserCartComponent } from './components/user-cart/user-cart.component';
 
 
 
@@ -55,7 +62,6 @@ import { FooterComponent } from './components/footer/footer.component';
     SignupComponent,
     AdminDashboardComponent,
     AdminSidebarComponent,
-    StatComponent,
     AdminAllgamesComponent,
     AdminAddgameComponent,
     AdminUpdategameComponent,
@@ -67,7 +73,15 @@ import { FooterComponent } from './components/footer/footer.component';
     AddAnswerComponent,
     AllExperiencesComponent,
     AddExperienceComponent,
-    FooterComponent
+    FooterComponent,
+    CategoryComponent,
+    AdminStatsComponent,
+    UserProfileComponent,
+    CartComponent,
+    UserSidebarComponent,
+    UserDetailsComponent,
+    UserGamesComponent,
+    UserCartComponent
   ],
   imports: [
     BrowserModule,

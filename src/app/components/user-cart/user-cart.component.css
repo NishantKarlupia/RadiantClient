@@ -1,0 +1,53 @@
+.cart-container{
+    background-color: #1b2d3d;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+
+}
+
+.heading{
+    /* border: 1px solid red; */
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+}
+
+
+.game-card{
+    background-color: #3d4d5d;
+    background-color: black;
+    border: 1px solid orange;
+    padding-left: 15px;
+    margin-bottom: 10px;
+}
+
+.left{
+    padding: 5px;
+    height: 80px;
+    /* border: 1px solid purple; */
+}
+.left img{
+    height: 70px;
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.right{
+    /* border: 1px solid purple; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* padding-right: 10px; */
+}
+
+.line{
+    padding: 5px;
+    padding-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid magenta; */
+}

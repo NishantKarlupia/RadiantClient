@@ -1,0 +1,27 @@
+<div class="parent-container">
+    <div class="details-container">
+        <div class="profile-container" *ngIf="user">
+            <div><img src="../../../assets/images/community.png" alt=""></div>
+            <div style="font-size: 20px;"> Welcome back {{user.username}} </div>
+        </div>
+
+        <div class="contact-container bootstrap-wrapper">
+            <div class="row">
+                <div class="col-md-6">Email</div>
+                <div class="col-md-6">{{user.email}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">gamertag</div>
+                <div class="col-md-6">{{user.username}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">xPoints</div>
+                <div class="col-md-6">{{user.xpoints}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">Games</div>
+                <div class="col-md-6">{{user.gamesOwned.length}}</div>
+            </div>
+        </div>
+    </div>
+</div>

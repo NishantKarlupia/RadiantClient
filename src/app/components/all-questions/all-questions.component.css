@@ -22,7 +22,7 @@
 
 .point-desc{
     color: rgb(218, 208, 208);
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .all-questions-container{
@@ -33,30 +33,37 @@
 }
 
 
-
-.card {
-    width: 85%;
-    /* background: linear-gradient(to bottom right, #044a78, #066106); Light blue to light green gradient */
-    background: linear-gradient(to bottom right, #3193d4, #17b017); /* Light blue to light green gradient */
+.question-card{
+    /* border: 1px solid red; */
+    background-color: #16202d;
+    margin-bottom: 20px;
+}
+.question-heading{
+    /* border: 1px solid blue; */
+    background-color: #223d5a;
+    display: flex;
+    justify-content: space-between;
 }
 
+.question-title{
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding: 15px;
+}
 
-#card-username{
+.question-user{
+    font-size: 14px;
+    padding: 20px;
+    font-family: sans-serif;
     color: yellow;
-    font-family:'Courier New', Courier, monospace;
-    font-size: 13px;
-    padding: 15px 0;
 }
 
-
-#card-title{
-    text-transform: uppercase;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-family:'Times New Roman', Times, serif;
-
+.question-description{
+    padding: 30px 15px 15px 15px;
+    font-size: 17px;
+    min-height: 110px;
 }
-
-
 
 
 

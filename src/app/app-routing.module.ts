@@ -7,7 +7,6 @@ import { CommunityComponent } from './components/community/community.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
-import { StatComponent } from './admin/stat/stat.component';
 import { AdminAllgamesComponent } from './admin/admin-allgames/admin-allgames.component';
 import { AdminAddgameComponent } from './admin/admin-addgame/admin-addgame.component';
 import { AdminUpdategameComponent } from './admin/admin-updategame/admin-updategame.component';
@@ -19,6 +18,13 @@ import { DeleteQuestionComponent } from './components/delete-question/delete-que
 import { AddAnswerComponent } from './components/add-answer/add-answer.component';
 import { AllExperiencesComponent } from './components/all-experiences/all-experiences.component';
 import { AddExperienceComponent } from './components/add-experience/add-experience.component';
+import { CategoryComponent } from './components/category/category.component';
+import { AdminStatsComponent } from './admin/admin-stats/admin-stats.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { CartComponent } from './components/cart/cart.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { UserGamesComponent } from './components/user-games/user-games.component';
+import { UserCartComponent } from './components/user-cart/user-cart.component';
 
 const routes: Routes = [
   {
@@ -97,8 +103,42 @@ const routes: Routes = [
     component:AddExperienceComponent,
     pathMatch:"full"
   },
+  {
+    path:'games/category/:category',
+    component:CategoryComponent,
+    pathMatch:"full"
+  },
+
+  {
+    path:"user",
+    component:UserProfileComponent,
+    children:[
+      {
+        path:"details",
+        component:UserDetailsComponent,
+        pathMatch:"full"
+      },
+      {
+        path:"games",
+        component:UserGamesComponent,
+        pathMatch:"full"
+      },
+      {
+        path:"cart",
+        component:UserCartComponent,
+        pathMatch:"full"
+      }
+    ]
+  },
+
+  {
+    path:"checkout",
+    component:CartComponent,
+    pathMatch:"full"
+  },
 
 
+  
 
   {
     path:"admin",
@@ -106,7 +146,7 @@ const routes: Routes = [
     children:[
       {
         path:"",
-        component:StatComponent
+        component:AdminStatsComponent
       },
       {
         path:"games",

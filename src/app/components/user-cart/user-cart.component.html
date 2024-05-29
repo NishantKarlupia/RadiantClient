@@ -1,0 +1,41 @@
+<div class="parent-container">
+    <div class="cart-container">
+        <div class="heading">Browse your Cart</div>
+        <div *ngIf="image">
+            <div class="bootstrap-wrapper game-card" *ngFor="let game of games">
+                <div class="row">
+                    <div class="col-md-2 left">
+                        <img [src]="'data:image/jpg;base64,'+game.coverImage" alt="" (click)="navigateToGame(game.gid)">
+                    </div>
+                    <div class="col-md-10 right">
+                        <div class="line">
+                            <div>{{game.gamename}}</div>
+                        </div>
+                        <div class="line">
+                            <div style="font-family: consolas;"> {{game.categories}} </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <button mat-raised-button color="primary" routerLink="/checkout">Checkout</button>
+            </div>
+        </div>
+
+        <div *ngIf="games!=null && games.length==0">
+
+            <div >
+                
+                    <h2>You haven't anything in your cart. </h2>
+                <div style="text-align: center;">
+                    <button mat-raised-button color="primary" routerLink="/store">Store</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="bootstrap-wrapper game-card" *ngIf="image==false && games==null">
+            <h2>Loading....</h2>
+        </div>
+
+    </div>
+</div>

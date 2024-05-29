@@ -58,7 +58,7 @@
                 <div class="bg-danger text-white p-3 mb-3"> {{gameData.releaseDate}} </div>
               </div>
             </div>
-            <div style="color: yellow;">Pupular tags</div>
+            <div style="color: yellow;">Popular tags</div>
             <div> {{gameData.categories}} </div>
           </div>
           
@@ -74,13 +74,23 @@
 
   </div>
 
-
-
-
-
-
-
 </div>
 
+<div class="buy-cart-container" *ngIf="gameData">
+  <div class="text-heading">
+    Buy {{gameData.gamename}}
+  </div>
+  <div class="buy-options">
+    <span class="buy-game-price"> {{gameData.price-(gameData.price*gameData.discount/100) | currency:"INR"}} </span>
 
+    <span class="buy-add-cart" *ngIf="alreadyOwned"> In Library </span>
+    <span class="buy-add-cart" (click)="addToCart(user,gameData)" *ngIf="!alreadyOwned && !alreadyInCart"> Add to Cart </span>
+    <span class="buy-add-cart" *ngIf="!alreadyOwned && alreadyInCart"> <a routerLink="/checkout" style="text-decoration: none;">In Cart</a>  </span>
+  </div>  
+</div>
 
+<div class="requirements" *ngIf="gameData">
+  <p [innerHTML]="gameData.requirements"></p>
+</div>
+
+<app-footer></app-footer>

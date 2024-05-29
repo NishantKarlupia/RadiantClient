@@ -3,7 +3,7 @@
     width: 80%;
     margin: auto;
     padding: 10px;
-    background-color: rgba(11, 1, 1, 0.751);
+    background-color: rgba(11, 22, 32, 0.851);
     /* margin-top: 0px; */
 }
 
@@ -82,3 +82,49 @@
     border: 0px solid red;
 }
 
+.buy-cart-container{
+    width: 80%;
+    margin: auto;
+    /* margin-bottom: 500px; */
+    position: relative;
+}
+
+.buy-cart-container .text-heading{
+    /* border: 1px solid red; */
+    width: 60%;
+    background: linear-gradient(to bottom, gray, rgb(87, 77, 77));
+    padding: 20px;
+    font-size: 30px;
+    margin-top: 20px;
+    border-radius: 3px;
+}
+
+.buy-options{
+    /* border: 1px solid red; */
+    position: absolute;
+    top: 75%;
+    left: 44%;
+    background-color: black;
+    padding: 10px 5px;
+    border-radius: 3px;
+    
+}
+.buy-game-price{
+    font-size: 15px;
+    padding: 10px;
+}
+
+.buy-add-cart{
+    background-color: green;
+    padding: 7px;
+    font-size: 16px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.requirements{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin:50px auto;
+    width: 80%;
+    background-color: rgba(11, 22, 32, 0.1);
+}

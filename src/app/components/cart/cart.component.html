@@ -1,0 +1,16 @@
+<div class="parent-container" *ngIf="user_cart">
+    <div class="heading" *ngIf="!this.user_cart">Cart is Empty!!!. Explore our store</div>
+    <div class="cart-container" *ngIf="this.user_cart">
+        <div class="cart-heading">Proceed for payment</div>
+        <div class="cart-item" *ngFor="let item of user_cart">
+            <div style="display: flex; justify-content: space-between;">
+                <div>{{item.gamename}}</div>
+                <div>{{item.price- (item.price*item.discount)/100  | currency:"INR"}}</div>
+            </div>
+        </div>
+        <div>Total Price: {{total_price|currency:"INR"}} </div>
+        <div>
+            <button mat-raised-button class="buy-button mt20" (click)="placeOrder()">Place Order</button>
+        </div>
+    </div>
+</div>

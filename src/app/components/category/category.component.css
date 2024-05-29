@@ -1,0 +1,47 @@
+
+
+.games-container{
+    padding: 10px;
+    width: 70%;
+    margin: 50px auto;
+    border: 1px solid black;
+    margin-bottom: 150px;
+}
+
+.game-card{
+    background-color: #3d4d5d;
+    border: 1px solid orange;
+    padding-left: 15px;
+    margin-bottom: 10px;
+}
+
+.left{
+    padding: 5px;
+    height: 80px;
+    /* border: 1px solid purple; */
+}
+.left img{
+    height: 70px;
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.right{
+    /* border: 1px solid purple; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* padding-right: 10px; */
+}
+
+.line{
+    padding: 5px;
+    padding-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid magenta; */
+}
+
+
+

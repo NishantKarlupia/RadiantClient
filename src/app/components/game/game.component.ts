@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GameService } from '../../services/game.service';
-import baseUrl from '../../services/globalConfig';
 import { DomSanitizer, SafeHtml ,SafeResourceUrl} from '@angular/platform-browser';
+import { LoginService } from '../../services/login.service';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -12,7 +13,8 @@ import { DomSanitizer, SafeHtml ,SafeResourceUrl} from '@angular/platform-browse
 })
 export class GameComponent {
 
-  constructor(private _route:ActivatedRoute, private _service:GameService,private _sanitizer: DomSanitizer){}
+  constructor(private _route:ActivatedRoute, private _service:GameService,private _sanitizer: DomSanitizer,private _login:LoginService,private _toast:ToastrService){}
+
   sanitizeHtml(html: string): SafeHtml {
     return this._sanitizer.bypassSecurityTrustHtml(html);
   }
@@ -29,9 +31,21 @@ export class GameComponent {
 
   gameData!:any;
 
+  alreadyInCart=false;
+  alreadyOwned=false;
+
+  user={
+    uid:""
+  };
+
   ngOnInit(){
     const gid=this._route.snapshot.params["gid"]
-    console.log(gid)
+    // console.log(gid)
+
+    this.user=this._login.getUser()
+    
+
+
 
     this._service.getGameById(gid).subscribe(
       (data:any)=>{
@@ -47,6 +61,24 @@ export class GameComponent {
       },
       (error)=>{}
     )
+
+    if(this.user!=null){
+      this._service.isGameInCart(this.user.uid,gid).subscribe(
+        (data:any)=>{
+          this.alreadyInCart=data
+        },
+        (error)=>{}
+      )
+
+      this._service.isGameOwned(this.user.uid,gid).subscribe(
+        (data:any)=>{
+          this.alreadyOwned=data
+        },
+        (error)=>{}
+      )
+
+    }
+
 
   }
 
@@ -99,6 +131,37 @@ export class GameComponent {
 
     // console.log(this.current_image,this.hidden)
     
+  }
+
+
+  addToCart(user:any,game:any){
+    if(user==null){
+      this._toast.info("login required","",{
+        progressBar:true,
+        closeButton:true,
+        timeOut:2000
+      })
+
+      return
+    }
+
+    // console.log(user.uid)
+    // console.log(game.gid)
+
+    this._service.addToCart(user.uid,game.gid).subscribe(
+      (data)=>{
+        this.alreadyInCart=true
+        this._toast.info("game added to cart","",{
+          progressBar:true,
+          closeButton:true,
+          timeOut:2000
+        })
+      },
+      (error)=>{}
+    )
+
+
+
   }
 
 

@@ -1,5 +1,6 @@
 .signup-container{
     background-image: url("../../../assets/images/about-community-container.jpg");
+    background-image: url("../../../assets/images/community-background.jpg");
     height: 100vh;
     /* border: 1px solid blue; */
     background-size: cover;

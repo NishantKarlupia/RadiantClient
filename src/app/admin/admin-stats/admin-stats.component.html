@@ -1,0 +1,19 @@
+<div class="parent-container">
+    <div class="stats-container">
+        <div class="heading">Admin Dashboard</div>
+        <div class="bootstrap-wrapper admin-data" *ngIf="adminData">
+            <div class="row data-item">
+                <div class="col-md-6"> Total Users: </div>
+                <div class="col-md-6"> {{adminData.totalUsers}} </div>
+            </div>
+            <div class="row data-item">
+                <div class="col-md-6"> Total Games: </div>
+                <div class="col-md-6"> {{adminData.totalGames}} </div>
+            </div>
+            <div class="row data-item">
+                <div class="col-md-6"> Discounted Games: </div>
+                <div class="col-md-6"> {{adminData.discountedGames}} </div>
+            </div>
+        </div>
+    </div>
+</div>

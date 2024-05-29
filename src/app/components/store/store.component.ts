@@ -17,10 +17,18 @@ export class StoreComponent {
   random_index=0;
   special_index=0;
 
+  categories=["Racing", "Action", "Adventure","Role Play","Open World","Fighting","Survival"]
+
+  price_filter=1000;
+
+  price_filter_data:any;
+
+  
+
   ngOnInit(){
 
 
-    this._game.getGameByName("Far Cry 4").subscribe(
+    this._game.getGameByName("Far Cry 6").subscribe(
       (data:any)=>{
         this.nowAvailable=data
         // console.log(this.nowAvailable)
@@ -38,12 +46,22 @@ export class StoreComponent {
     this._game.getRandomGamesWithDiscount().subscribe(
       (data:any)=>{
         this.special_offers=data
-        console.log(this.special_offers)
+        // console.log(this.special_offers)
       },
       (error)=>{
 
       }
     )
+
+
+    this._game.getGamesLessThanPrice(this.price_filter).subscribe(
+      (data:any)=>{
+        this.price_filter_data=data
+
+      },
+      (error)=>{}
+    )
+
 
     setInterval(() => {
       this.random_index = (this.random_index + 1) % this.featured.length;
@@ -62,5 +80,10 @@ export class StoreComponent {
     // console.log("krbjkbjksbk")
     this._router.navigate(["/game/"+gid])
   }
+
+  gamesOfCategory(category:String){
+    this._router.navigate([`/games/category/${category}`])
+  }
+
 
 }

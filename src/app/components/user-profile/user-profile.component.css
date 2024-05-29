@@ -1,0 +1,28 @@
+.parent-container{
+    border: 0px solid red;
+    /* border: 1px solid red; */
+}
+
+.profile-container{
+    /* border: 1px solid green; */
+    padding: 20px;
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+    /* background-color:#0f1a28d0; */
+}
+
+.heading{
+    font-size: 40px;
+    font-family:sans-serif;
+    background-color:#233f5b;
+    padding: 20px;
+}
+
+.user-container{
+    background-color: #1c293b;
+    margin-top: 20px;
+    /* padding: 20px; */
+
+}
+

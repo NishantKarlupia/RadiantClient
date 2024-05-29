@@ -49,7 +49,60 @@
 
         </div>
 
-        
+
+        <div class="category-container">
+            <h3 class="category-heading">BROWSE BY CATEGORY</h3>
+
+            <div class="category-content">
+                <div class="category-content-container" *ngFor="let category of categories" (click)="gamesOfCategory(category)">
+                    <h2>{{category}}</h2>
+                    <img src="../../../assets/images/categories/{{category}}.jpg" alt="">
+                </div>
+            </div>
+
+            
+        </div>
+
+
+        <div class="price-filter-container " *ngIf="price_filter_data">
+            <h3 class="price-heading">
+                UNDER {{price_filter|currency:"INR"}}
+            </h3>
+            <div class="price-games-content">
+                <div class="price-games-container" *ngFor="let game of price_filter_data" (click)="openGame(game.gid)">
+                    <img [src]="'data:image/jpg;base64,'+game.coverImage" alt="coverImage">
+                    <h4> {{game.price|currency:"INR"}} </h4>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="games-container">
+            <h3>BROWSE ALL GAMES</h3>
+            <div class="bootstrap-wrapper game-card" *ngFor="let game of featured" >
+                <div class="row"  >
+                    <div class="col-md-2 left">
+                        <img [src]="'data:image/jpg;base64,'+game.coverImage" alt="" (click)="openGame(game.gid)">
+                    </div>
+                    <div class="col-md-10 right">
+                        <div class="line" >
+                            <div>{{game.gamename}}</div>
+                            <div>release date: {{game.releaseDate}}</div>
+                        </div>
+                        <div class="line" >
+                            <div>{{game.platform}}</div>
+                            <div style="font-family: consolas;"> {{game.categories}} </div>
+                            <div>{{game.price| currency:"INR"}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button style="cursor: pointer;">All Games</button>
+        </div>
+
+
+        <app-footer></app-footer>
+
 
 
     </div>

@@ -52,8 +52,7 @@
     width: 80%;
     margin: 20px auto;
     padding: 10px;
-    /* color: black; */
-    /* background: linear-gradient(to bottom right, rgb(232, 229, 232), rgb(228, 208, 204)); Light blue to light green gradient */
+    
 }
 
 .add-answer{
@@ -64,27 +63,34 @@
 
 
 
-.card {
-    width: 85%;
-    /* background: linear-gradient(to bottom right, #044a78, #066106); Light blue to light green gradient */
-    background: linear-gradient(to bottom right, #54a0d3, #2c8e2c); /* Light blue to light green gradient */
+.answer-card{
+    /* border: 1px solid red; */
+    background-color: #16202d;
+    background-color: #0d131b;
+    background-color: #122a47;
+    margin-bottom: 20px;
+}
+.answer-heading{
+    /* border: 1px solid blue; */
+    background-color: #223d5a;
+    background-color: #0a182b;
+    display: flex;
+    justify-content: space-between;
 }
 
-
-#card-username{
+.answer-user{
+    font-size: 14px;
+    padding: 20px;
+    font-family: sans-serif;
     color: yellow;
-    font-family:'Courier New', Courier, monospace;
-    font-size: 13px;
-    padding: 15px 0;
 }
 
-
-#card-title{
-    text-transform: uppercase;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-family:'Times New Roman', Times, serif;
-
+.answer-description{
+    padding: 30px 15px 15px 15px;
+    font-size: 17px;
+    min-height: 120px;
 }
+
 
 .like-button,
 .dislike-button {

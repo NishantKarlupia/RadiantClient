@@ -1,14 +1,14 @@
 <div class="game-container">
-    <mat-card style="padding: 15px;">
+    <mat-card class="card-container" style="padding: 15px;">
         <div class="heading">
             Fill the detils below to add a new game.
         </div>
 
         <form (ngSubmit)="formSubmit()" enctype="multipart/form-data">
 
-            <mat-form-field class="full-width" appearance="fill" color="primary">
+            <mat-form-field class="full-width custom-bg" appearance="fill" color="primary" >
                 <mat-label style="color: white;">Gamename</mat-label>
-                <input type="text" matInput name="gamename" [(ngModel)]="gameData.gamename">
+                <input type="text" matInput name="gamename" [(ngModel)]="gameData.gamename" >
             </mat-form-field>
 
             <mat-form-field class="full-width" appearance="fill" color="primary">

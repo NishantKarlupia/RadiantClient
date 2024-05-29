@@ -4,9 +4,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 82vh;
+    height: 85.5vh;
     background-image: url("../../../assets/images/home_background.jpg");
     background-image: url("../../../assets/images/background.jpg");
+    background-image: url("../../../assets/images/about-community-container.jpg");
 
     /* background-repeat: no-repeat; */
     /* object-fit: fill; */

@@ -1,0 +1,47 @@
+
+.stats-container{
+    height: 95vh;
+    background-image: url("../../../assets/images/admin-dashboard.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 1px solid red;
+    margin-top: 10px;
+    border-radius: 7px;
+    padding: 10px;
+    text-align: center;
+}
+
+.heading{
+    font-size: 80px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    /* border: 1px solid blue; */
+    padding: 30px;
+    margin-top: 30px;
+    color: yellow;
+
+}
+
+
+.admin-data{
+    /* border: 1px solid blue; */
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 20px;
+    width: 70%;
+    margin: auto;
+    margin-top: 150px;
+    text-align: left;
+}
+
+.data-item{
+    /* border: 1px solid blue; */
+    padding: 10px;
+}
+
+
+
+
+
+
+
+

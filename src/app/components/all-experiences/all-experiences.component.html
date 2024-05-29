@@ -24,20 +24,23 @@
     </div>
 
     <div class="experience-container">
-        <h2>Experiences of other gamers</h2>
+        <h1>Experiences of other gamers</h1>
 
-        <div class=" mb20" *ngFor="let experience of experiences">
-            <mat-card class="card" >
-                <mat-card-header>
-                    <mat-card-title id="card-title">{{experience.title}}</mat-card-title>
-                    <!-- <mat-card-subtitle id="card-username"> ( by {{experience.user.username}} )</mat-card-subtitle> -->
-                </mat-card-header>
-
-                <mat-card-content>
-                    <p [innerHTML]="experience.description"></p>
-                </mat-card-content>
-                <mat-divider></mat-divider>
-            </mat-card>
+        <div class="experience-card" *ngFor="let experience of experiences">
+            <div class="experience-heading">
+                <div class="experience-title"> {{experience.title}} </div>
+                <div class="experience-user"> (by {{experience.user.username}}) </div>
+            </div>
+    
+            <div class="experience-description">
+                <p [innerHTML]="experience.description"></p>
+            </div>
         </div>
+
     </div>
+
+    
+
+
+
 </div>

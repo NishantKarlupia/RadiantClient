@@ -1,0 +1,22 @@
+<div class="parent-container">
+    <div class="profile-container">
+        <div class="heading">
+            <div>{{user.username }}'s Account</div>
+            <h3 style="margin-top: 20px;">Radiant ID: {{user.uid}}</h3>
+        </div>
+
+        <div class="user-container">
+            <div class="bootstrap-wrapper">
+                <div class="row">
+                    <div class="col-md-3">
+                        <app-user-sidebar />
+                    </div>
+                    <div class="col-md-9">
+                        <router-outlet />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
