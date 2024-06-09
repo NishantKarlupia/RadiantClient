@@ -4,6 +4,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { LoginService } from '../../services/login.service';
 import { QuestionService } from '../../services/question.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class AddAnswerComponent {
 
-  constructor(private _route:ActivatedRoute,private _router:Router,private _login:LoginService,private _question:QuestionService,private _snack:MatSnackBar){}
+  constructor(private _route:ActivatedRoute,private _router:Router,private _login:LoginService,private _question:QuestionService,private _snack:MatSnackBar,private _toast:ToastrService){}
 
   public Editor = ClassicEditor;
 
@@ -59,10 +60,14 @@ export class AddAnswerComponent {
 
     this._question.addAnswer(this.answerData).subscribe(
       (data)=>{
-        console.log(data)
+        this._toast.info("answer added successfully","",{
+          progressBar:true,
+          closeButton:true,
+          timeOut:2000
+        })
       },
       (error)=>{
-        console.log(error)
+        this._snack.open("Internal Server Error","",{duration:2000})
       }
     )
 

@@ -18,7 +18,7 @@ export class AdminAllgamesComponent {
     this._service.getAllGame().subscribe(
       (data)=>{
         this.games=data
-        console.log(this.games)
+        // console.log(this.games)
       },
       (error)=>{
         console.log(error)
@@ -29,7 +29,7 @@ export class AdminAllgamesComponent {
 
   navigateToGame(gid:any){
 
-    console.log(gid)
+    // console.log(gid)
     this._router.navigate([`game/${gid}`])
 
   }

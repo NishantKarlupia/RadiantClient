@@ -24,8 +24,6 @@ export class LoginComponent {
   }
 
   formSubmit(){
-    console.log("login component")
-    console.log(this.loginData)
 
     if(this.loginData.username.trim()==""){
       this._snack.open("Username is required!!!","",{duration:2000})
@@ -39,15 +37,12 @@ export class LoginComponent {
 
     this._login.generateToken(this.loginData).subscribe(
       (data:any)=>{
-        console.log(data)
         this._login.loginUser(data.token)
         this._login.getCurrentUser().subscribe(
           (user:any)=>{
-            console.log(user.user)
             this._login.setUser(user.user)
 
             const role=this._login.getUserRole()
-            console.log(role)
             if(role=="ADMIN" || role=="NORMAL"){
               this._login.loginStatusSubject.next(true)
               this._router.navigate(['store'])

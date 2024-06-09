@@ -54,7 +54,7 @@ export class GameComponent {
         // console.log(path)
         // this.gameData["image"]=path
         this.images_array=this.gameData.gamePlayImages
-        console.log(this.gameData)
+        // console.log(this.gameData)
         // console.log(this.images_array)
         this.gamePlayImage=this.images_array[1]
 

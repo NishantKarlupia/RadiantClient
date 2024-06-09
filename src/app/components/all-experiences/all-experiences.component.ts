@@ -20,7 +20,7 @@ export class AllExperiencesComponent {
     this._expService.getAllExperiences().subscribe(
       (data:any)=>{
         this.experiences=data
-        console.log(this.experiences)
+        // console.log(this.experiences)
       },
       (error)=>{
         console.log(error)
@@ -32,7 +32,6 @@ export class AllExperiencesComponent {
 
   addExperience()
   {
-    console.log("hello world")
 
     if(this._login.getUser()==null){
       this._toast.info("login required","",{

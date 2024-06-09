@@ -80,11 +80,11 @@ export class AdminUpdategameComponent {
     }
 
 
-    console.log(this.gameData)
+    // console.log(this.gameData)
 
     this._service.updateGame(formData).subscribe(
       (data:any)=>{
-        console.log(data)
+        // console.log(data)
       },
       (error)=>{
         console.log(error)

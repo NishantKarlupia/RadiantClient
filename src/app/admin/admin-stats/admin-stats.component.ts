@@ -16,7 +16,7 @@ export class AdminStatsComponent {
     this._admin.getAdminData().subscribe(
       (data:any)=>{
         this.adminData=data
-        console.log(this.adminData)
+        // console.log(this.adminData)
 
       },
       (error)=>{}

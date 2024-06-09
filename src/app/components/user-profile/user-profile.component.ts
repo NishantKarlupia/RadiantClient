@@ -17,7 +17,6 @@ export class UserProfileComponent {
   ngOnInit(){
 
     this.user=this._login.getUser()
-    console.log(this.user)
 
     if(this.user==null){
 

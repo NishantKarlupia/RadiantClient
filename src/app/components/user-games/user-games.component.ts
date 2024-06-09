@@ -19,7 +19,6 @@ export class UserGamesComponent {
     this.user=this._login.getUser()
     this.games=this.user.gamesOwned
 
-    console.log(this.games)
 
     for(let id in this.games){
       this._game.getGameById(this.games[id].gid).subscribe(
@@ -30,7 +29,6 @@ export class UserGamesComponent {
         (error)=>{}
       )
     }
-    console.log(this.games)
   }
 
   navigateToGame(gid:any){}

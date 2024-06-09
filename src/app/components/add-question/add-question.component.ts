@@ -4,6 +4,8 @@ import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { QuestionService } from '../../services/question.service';
+import { ToastrService } from 'ngx-toastr';
+
 
 
 
@@ -14,7 +16,7 @@ import { QuestionService } from '../../services/question.service';
 })
 export class AddQuestionComponent {
 
-  constructor(private _login:LoginService,private _router:Router,private _snack:MatSnackBar,private _question:QuestionService){}
+  constructor(private _toast:ToastrService,private _login:LoginService,private _router:Router,private _snack:MatSnackBar,private _question:QuestionService){}
 
   public Editor = ClassicEditor;
 
@@ -39,7 +41,7 @@ export class AddQuestionComponent {
   ngOnInit(){
 
     this.user=this._login.getUser()
-    console.log(this.user)
+    // console.log(this.user)
     if(this.user==undefined || this.user==null){
       this._router.navigate(['/login'])
       return
@@ -66,7 +68,7 @@ export class AddQuestionComponent {
 
     this.question.user=this.user
 
-    console.log(this.question)
+    // console.log(this.question)
 
     let formData=new FormData()
 
@@ -79,14 +81,17 @@ export class AddQuestionComponent {
 
     this._question.addQuestion(formData).subscribe(
       (data:any)=>{
-        console.log(data)
+        // console.log(data)
+        this._toast.info("question added successfully","",{
+          progressBar:true,
+          closeButton:true,
+          timeOut:2000
+        })
       },
       (error)=>{
         this._snack.open("Internal Server Error","",{duration:2000})
       }
     )
-
-    
 
   }
 

@@ -91,7 +91,6 @@ export class QuestionComponent {
         
       }
       else{
-        console.log("no")
       }
     })
 

@@ -14,7 +14,6 @@ export class UserDetailsComponent {
 
   ngOnInit(){
     this.user=this._login.getUser()
-    console.log(this.user)
   }
 
 }

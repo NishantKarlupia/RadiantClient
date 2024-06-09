@@ -3,6 +3,8 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { ExperienceService } from '../../services/experience.service';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -13,7 +15,7 @@ import { Router } from '@angular/router';
 export class AddExperienceComponent {
   
 
-  constructor(private _expService:ExperienceService, private _login:LoginService, private _router:Router){}
+  constructor(private _toast:ToastrService,private _snack:MatSnackBar,private _expService:ExperienceService, private _login:LoginService, private _router:Router){}
 
   public Editor=ClassicEditor;
 
@@ -50,10 +52,15 @@ export class AddExperienceComponent {
 
     this._expService.addExperience(formData).subscribe(
       (data)=>{
-        console.log(data)
+          this._toast.info("achievement added!!!","",{
+          progressBar:true,
+          closeButton:true,
+          timeOut:2000
+        })
       },
       (error)=>{
-        console.log(error)
+        // console.log(error)
+        this._snack.open("Internal Server Error","",{duration:2000})
       }
     )
 

@@ -23,7 +23,6 @@ export class UserCartComponent {
     this._user.getUserCartItems(this.user.uid).subscribe(
       (data:any)=>{
         this.games=data
-        console.log(this.games)
         for(let id in this.games){
           this._game.getGameById(this.games[id].gid).subscribe(
             (data:any)=>{

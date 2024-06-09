@@ -27,7 +27,7 @@ export class CartComponent {
   ngOnInit(){
 
     this.user=this._login.getUser()
-    console.log(this.user)
+    // console.log(this.user)
 
     if(this.user==null){
       this._router.navigate(['/store'])
@@ -68,7 +68,7 @@ export class CartComponent {
 
     this._game.createTransaction(this.total_price).subscribe(
       (data)=>{
-        console.log(data)
+        // console.log(data)
         this.openTransactionModal(data)
       },
       (error)=>{

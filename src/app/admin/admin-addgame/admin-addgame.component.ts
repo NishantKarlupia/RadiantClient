@@ -45,8 +45,8 @@ export class AdminAddgameComponent {
     // this.gameData["coverImage"]=this.coverImage
 
     // console.log(this.gameData)
-    console.log(this.coverImage)
-    console.log(this.gamePlayImages)
+    // console.log(this.coverImage)
+    // console.log(this.gamePlayImages)
 
 
     const formData=new FormData()

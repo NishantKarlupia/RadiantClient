@@ -90,17 +90,14 @@ export class StoreComponent {
   }
 
   searchGame(event:any,value:String){
-    console.log("searching game...")
     if(value.trim()==""){
       this.search_result=null;
       return
     }
-    console.log(value)
 
     this._game.searchGame(value).subscribe(
       (data)=>{
         this.search_result=data
-        console.log(this.search_result)
       },
       (error)=>{}
     )
@@ -108,7 +105,6 @@ export class StoreComponent {
   }
 
   navigateToGame(gid:any){
-    console.log(gid)
   }
 
 

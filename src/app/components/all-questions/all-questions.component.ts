@@ -21,7 +21,7 @@ export class AllQuestionsComponent {
     this._questionService.getAllQuestions().subscribe(
       (data:any)=>{
         this.questionsData=data;
-        console.log(this.questionsData)
+        // console.log(this.questionsData)
       },
       (error)=>{}
     )

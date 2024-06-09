@@ -49,7 +49,6 @@ export class SignupComponent {
     this._signup.isUserExistsWithUsername(this.userData.username.trim().toLowerCase()).subscribe(
       (data)=>{
         if(data==true){
-          console.log("inside username check")
           this._snack.open("username already taken!!!","",{duration:1000})
           return
         }
