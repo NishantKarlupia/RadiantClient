@@ -8,7 +8,7 @@
                 <div>{{item.price- (item.price*item.discount)/100  | currency:"INR"}}</div>
             </div>
         </div>
-        <div>Total Price: {{total_price|currency:"INR"}} </div>
+        <div>Total Price: {{total_price|currency:"INR"}} &nbsp; ( {{this.x_points}} &nbsp; xPoints left) </div>
         <div>
             <button mat-raised-button class="buy-button mt20" (click)="placeOrder()">Place Order</button>
         </div>

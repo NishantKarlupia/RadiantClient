@@ -53,6 +53,10 @@ export class GameService {
   public purchaseGame(userId:any,gameId:any){
     return this._http.put(`${baseUrl}/users/purchasegame/${userId}/${gameId}`,userId)
   }
+  
+  public searchGame(gamename:any){
+    return this._http.get(`${baseUrl}/games/search/${gamename}`)
+  }
 
 
 

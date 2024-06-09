@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SignupService } from '../../services/signup.service';
 import Swal from 'sweetalert2';
+import { LoginService } from '../../services/login.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,13 +13,22 @@ import Swal from 'sweetalert2';
 })
 export class SignupComponent {
 
-  constructor(private _snack:MatSnackBar, private _signup:SignupService){}
+  constructor(private _snack:MatSnackBar, private _signup:SignupService,private _login:LoginService,private _router:Router){}
 
   userData={
     username:"",
     email:"",
     password:"",
     referal:""
+  }
+
+  ngOnInit(){
+    let user=this._login.getUser()
+    if(user!=null){
+
+      this._router.navigate(['/store'])
+      return
+    }
   }
 
 
@@ -66,6 +77,7 @@ export class SignupComponent {
                         text:"User Created Successfully",
                         "icon":"info"
                       })
+                      this._router.navigate(['/login'])
                     },
                     (error)=>{
                       this._snack.open("Internal Server Error","",{duration:3000})
@@ -81,6 +93,7 @@ export class SignupComponent {
                         text:"User Created Successfully",
                         "icon":"info"
                       })
+                      this._router.navigate(['/login'])
                     },
                     (error)=>{
                       this._snack.open("Internal Server Error","",{duration:3000})

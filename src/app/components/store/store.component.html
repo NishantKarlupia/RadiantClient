@@ -11,13 +11,16 @@
             <div class="random-games-container bootstrap-wrapper" (click)="openGame(featured[random_index].gid)">
                 <div class="row">
                     <div class="col-md-8" style="padding: 0;">
-                    <img [src]="'data:image/jpg;base64,'+featured[random_index].coverImage" alt="coverImage">
-                        
+                        <img [src]="'data:image/jpg;base64,'+featured[random_index].coverImage" alt="coverImage">
+
                     </div>
-                    <div class="col-md-4 random-game-right" >
-                        <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{featured[random_index].gamename}}</h3>
+                    <div class="col-md-4 random-game-right">
+                        <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                            {{featured[random_index].gamename}}</h3>
                         <!-- <p class="random-game-desc">{{featured[random_index].description}}</p> -->
-                        <p class="random-game-desc" [innerHTML]="featured[random_index].description.split(' ').length > 50 ? featured[random_index].description.split(' ').slice(0, 50).join(' ') + '...' : featured[random_index].description"></p>
+                        <p class="random-game-desc"
+                            [innerHTML]="featured[random_index].description.split(' ').length > 50 ? featured[random_index].description.split(' ').slice(0, 50).join(' ') + '...' : featured[random_index].description">
+                        </p>
                         <h4>Now Available</h4>
                         <h5>{{featured[random_index].price | currency:"INR"}}</h5>
                     </div>
@@ -32,16 +35,22 @@
             <div class="random-games-container bootstrap-wrapper" (click)="openGame(special_offers[special_index].gid)">
                 <div class="row">
                     <div class="col-md-8" style="padding: 0;">
-                    <img [src]="'data:image/jpg;base64,'+special_offers[special_index].coverImage" alt="coverImage">
-                        
+                        <img [src]="'data:image/jpg;base64,'+special_offers[special_index].coverImage" alt="coverImage">
+
                     </div>
-                    <div class="col-md-4 random-game-right" >
-                        <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{special_offers[special_index].gamename}}</h3>
-                        <p class="random-game-desc" [innerHTML]="special_offers[special_index].description.split(' ').length > 50 ? special_offers[special_index].description.split(' ').slice(0, 50).join(' ') + '...' : special_offers[special_index].description"></p>
+                    <div class="col-md-4 random-game-right">
+                        <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                            {{special_offers[special_index].gamename}}</h3>
+                        <p class="random-game-desc"
+                            [innerHTML]="special_offers[special_index].description.split(' ').length > 50 ? special_offers[special_index].description.split(' ').slice(0, 50).join(' ') + '...' : special_offers[special_index].description">
+                        </p>
                         <h4>Now Available</h4>
                         <div style="display: flex;">
-                            <h5 style="text-decoration: line-through;">{{special_offers[special_index].price | currency:"INR"}}</h5>
-                            <h5 class="discounted_price">{{special_offers[special_index].price- (special_offers[special_index].price*special_offers[special_index].discount/100) | currency:"INR"}}</h5>
+                            <h5 style="text-decoration: line-through;">{{special_offers[special_index].price |
+                                currency:"INR"}}</h5>
+                            <h5 class="discounted_price">{{special_offers[special_index].price-
+                                (special_offers[special_index].price*special_offers[special_index].discount/100) |
+                                currency:"INR"}}</h5>
                         </div>
                     </div>
                 </div>
@@ -54,13 +63,14 @@
             <h3 class="category-heading">BROWSE BY CATEGORY</h3>
 
             <div class="category-content">
-                <div class="category-content-container" *ngFor="let category of categories" (click)="gamesOfCategory(category)">
+                <div class="category-content-container" *ngFor="let category of categories"
+                    (click)="gamesOfCategory(category)">
                     <h2>{{category}}</h2>
                     <img src="../../../assets/images/categories/{{category}}.jpg" alt="">
                 </div>
             </div>
 
-            
+
         </div>
 
 
@@ -78,18 +88,46 @@
 
 
         <div class="games-container">
-            <h3>BROWSE ALL GAMES</h3>
-            <div class="bootstrap-wrapper game-card" *ngFor="let game of featured" >
-                <div class="row"  >
+            <div class="bootstrap-wrapper">
+                <div class="row">
+                    <div class="col-md-5">
+                        <h3>BROWSE ALL GAMES</h3>
+                    </div>
+                    <div class="search-container col-md-7">
+                        <input (keyup)="searchGame($event,searchInput.value)" #searchInput id="search-game" type="text"
+                            placeholder="search game...">
+                        <div class="search-result" *ngIf="search_result">
+                            <div class="bootstrap-wrapper game-card-result" *ngFor="let game of search_result" >
+                                <div class="row">
+                                    <div class="col-md-2 left">
+                                        <img [src]="'data:image/jpg;base64,'+game.coverImage" alt="" (click)="navigateToGame(game.gid)">
+                                    </div>
+                                    <div class="col-md-10 right">
+                                        <div class="line">
+                                            <div>{{game.gamename}}</div>
+                                        </div>
+                                        <div class="line">
+                                            <div style="font-family: consolas;"> {{game.categories}} </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="bootstrap-wrapper game-card" *ngFor="let game of featured">
+                <div class="row">
                     <div class="col-md-2 left">
                         <img [src]="'data:image/jpg;base64,'+game.coverImage" alt="" (click)="openGame(game.gid)">
                     </div>
                     <div class="col-md-10 right">
-                        <div class="line" >
+                        <div class="line">
                             <div>{{game.gamename}}</div>
                             <div>release date: {{game.releaseDate}}</div>
                         </div>
-                        <div class="line" >
+                        <div class="line">
                             <div>{{game.platform}}</div>
                             <div style="font-family: consolas;"> {{game.categories}} </div>
                             <div>{{game.price| currency:"INR"}}</div>
@@ -97,7 +135,7 @@
                     </div>
                 </div>
             </div>
-            <button style="cursor: pointer;">All Games</button>
+            <!-- <button style="cursor: pointer;">All Games</button> -->
         </div>
 
 

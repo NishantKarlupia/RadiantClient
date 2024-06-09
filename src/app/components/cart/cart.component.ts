@@ -3,6 +3,7 @@ import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
 import { GameService } from '../../services/game.service';
 import { ToastrService } from 'ngx-toastr';
+import { UserService } from '../../services/user.service';
 
 // import Razorpay from 'razorpay';
 
@@ -16,11 +17,12 @@ declare var Razorpay:any;
 export class CartComponent {
 
 
-  constructor(private _login:LoginService,private _router:Router,private _game:GameService,private _toast:ToastrService){}
+  constructor(private _login:LoginService,private _router:Router,private _game:GameService,private _toast:ToastrService,private _user:UserService){}
   user:any;
 
   user_cart:any;
   total_price=0;
+  x_points=0;
 
   ngOnInit(){
 
@@ -32,12 +34,33 @@ export class CartComponent {
       return
     }
 
-    this.user_cart=(this.user.cart.length!=0?this.user.cart:null)
+    this.x_points=this.user.xpoints;
 
-    // console.log(this.user_cart)
-    if(this.user_cart!=null){
-      for(let item of this.user_cart)this.total_price+=(item.price- (item.price*item.discount)/100);
-    }
+    this._user.getUserCartItems(this.user.uid).subscribe(
+      (data:any)=>{
+        this.user_cart=data
+
+        this.user_cart=(this.user.cart.length!=0?this.user.cart:null)
+
+        if(this.user_cart!=null){
+          for(let item of this.user_cart)this.total_price+=(item.price- (item.price*item.discount)/100);
+        }
+
+
+        if(this.x_points<=this.total_price){
+          this.total_price-=this.x_points;
+          this.x_points=0
+        }
+        else{
+          this.x_points-=this.total_price
+          this.total_price=0
+        }
+
+      },
+      (error)=>{}
+    )
+
+    
 
   }
 
@@ -102,6 +125,10 @@ export class CartComponent {
         (error)=>{}
       )
     }
+    this._user.updatePoints(this.user.uid,this.x_points).subscribe(
+      (data)=>{},
+      (error)=>{}
+    )
     this._router.navigate(['/store'])
   }
 

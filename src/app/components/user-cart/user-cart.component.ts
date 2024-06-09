@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../../services/login.service';
 import { GameService } from '../../services/game.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-user-cart',
@@ -9,7 +10,7 @@ import { GameService } from '../../services/game.service';
 })
 export class UserCartComponent {
 
-  constructor(private _login:LoginService,private _game:GameService){}
+  constructor(private _login:LoginService,private _game:GameService,private _user:UserService){}
 
   user:any;
   games:any;
@@ -17,20 +18,26 @@ export class UserCartComponent {
 
   ngOnInit(){
     this.user=this._login.getUser()
-    this.games=this.user.cart
 
-    console.log(this.games)
 
-    for(let id in this.games){
-      this._game.getGameById(this.games[id].gid).subscribe(
-        (data:any)=>{
-          this.games[id].coverImage=data.coverImage
-          this.image=true
-        },
-        (error)=>{}
-      )
-    }
-    console.log(this.games)
+    this._user.getUserCartItems(this.user.uid).subscribe(
+      (data:any)=>{
+        this.games=data
+        console.log(this.games)
+        for(let id in this.games){
+          this._game.getGameById(this.games[id].gid).subscribe(
+            (data:any)=>{
+              this.games[id].coverImage=data.coverImage
+              this.image=true
+            },
+            (error)=>{}
+          )
+        }
+      },
+      (error)=>{}
+    )
+
+
   }
 
   navigateToGame(gid:any){}
