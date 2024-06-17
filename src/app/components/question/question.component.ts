@@ -105,7 +105,7 @@ export class QuestionComponent {
     this._quesService.likeAnswer(ansId).subscribe(
       (data)=>{
         this._toast.info("you liked this answer","",{
-          progressBar:true,
+          progressBar:false,
           closeButton:true,
           timeOut:2000
         })
@@ -124,7 +124,7 @@ export class QuestionComponent {
     this._quesService.dislikeAnswer(ansId).subscribe(
       (data)=>{
         this._toast.info("you disliked this answer","",{
-          progressBar:true,
+          progressBar:false,
           closeButton:true,
           timeOut:2000
         })

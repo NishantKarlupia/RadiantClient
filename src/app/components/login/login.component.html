@@ -4,9 +4,9 @@
     <div class="form-container">
       <form  (ngSubmit)="formSubmit()">
         <p class="text-label" style="color: blue">Sign in with account name</p>
-        <input type="text" class="input-box" name="username" [(ngModel)]="loginData.username" />
+        <input type="text" class="input-box" name="username" [(ngModel)]="loginData.username" required/>
         <p class="text-label">Password</p>
-        <input type="password" class="input-box" name="password" [(ngModel)]="loginData.password" />
+        <input type="password" class="input-box" name="password" [(ngModel)]="loginData.password" required />
 
         <!-- <button type="submit">Sign In</button> -->
         <div class="login-button-container">

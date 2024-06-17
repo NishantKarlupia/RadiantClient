@@ -83,7 +83,7 @@ export class AddQuestionComponent {
       (data:any)=>{
         // console.log(data)
         this._toast.info("question added successfully","",{
-          progressBar:true,
+          progressBar:false,
           closeButton:true,
           timeOut:2000
         })

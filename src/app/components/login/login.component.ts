@@ -43,9 +43,13 @@ export class LoginComponent {
             this._login.setUser(user.user)
 
             const role=this._login.getUserRole()
-            if(role=="ADMIN" || role=="NORMAL"){
+            if(role=="ADMIN"){
               this._login.loginStatusSubject.next(true)
-              this._router.navigate(['store'])
+              this._router.navigate(['/admin'])
+            }
+            else if(role=="NORMAL"){
+              this._login.loginStatusSubject.next(true)
+              this._router.navigate(['/user'])
             }
             else{
               this._login.logout()

@@ -23,6 +23,7 @@ export class NavbarComponent {
   logout(){
     this._login.logout()
     this._login.loginStatusSubject.next(false)
+    this._router.navigate(['/login'])
   }
 
   openDashboard(){

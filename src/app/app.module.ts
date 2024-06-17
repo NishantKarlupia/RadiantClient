@@ -47,6 +47,8 @@ import { UserSidebarComponent } from './components/user-sidebar/user-sidebar.com
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { UserGamesComponent } from './components/user-games/user-games.component';
 import { UserCartComponent } from './components/user-cart/user-cart.component';
+import { UserRedeemComponent } from './components/user-redeem/user-redeem.component';
+import { UserCodesComponent } from './components/user-codes/user-codes.component';
 
 
 
@@ -81,7 +83,9 @@ import { UserCartComponent } from './components/user-cart/user-cart.component';
     UserSidebarComponent,
     UserDetailsComponent,
     UserGamesComponent,
-    UserCartComponent
+    UserCartComponent,
+    UserRedeemComponent,
+    UserCodesComponent
   ],
   imports: [
     BrowserModule,

@@ -22,6 +22,11 @@ export class SignupComponent {
     referal:""
   }
 
+  loginData={
+    username:"",
+    password:""
+  }
+
   ngOnInit(){
     let user=this._login.getUser()
     if(user!=null){
@@ -76,7 +81,29 @@ export class SignupComponent {
                         text:"User Created Successfully",
                         "icon":"info"
                       })
-                      this._router.navigate(['/login'])
+
+                      // signup successful now login
+                      this.loginData.username=this.userData.username
+                      this.loginData.password=this.userData.password
+
+                      this._login.generateToken(this.loginData).subscribe(
+                        (data:any)=>{
+                          this._login.loginUser(data.token)
+                          this._login.getCurrentUser().subscribe(
+                            (data:any)=>{
+                              this._login.setUser(data.user)
+                              const role=this._login.getUserRole()
+                              if(role=="ADMIN" || role=="NORMAL"){
+                                this._login.loginStatusSubject.next(true)
+                                this._router.navigate(['store'])
+                              }
+                              else{
+                                this._login.logout()
+                              }
+                            }
+                          )
+                        }
+                      )
                     },
                     (error)=>{
                       this._snack.open("Internal Server Error","",{duration:3000})
@@ -92,7 +119,29 @@ export class SignupComponent {
                         text:"User Created Successfully",
                         "icon":"info"
                       })
-                      this._router.navigate(['/login'])
+
+                      // signup successful now login
+                      this.loginData.username=this.userData.username
+                      this.loginData.password=this.userData.password
+
+                      this._login.generateToken(this.loginData).subscribe(
+                        (data:any)=>{
+                          this._login.loginUser(data.token)
+                          this._login.getCurrentUser().subscribe(
+                            (data:any)=>{
+                              this._login.setUser(data.user)
+                              const role=this._login.getUserRole()
+                              if(role=="ADMIN" || role=="NORMAL"){
+                                this._login.loginStatusSubject.next(true)
+                                this._router.navigate(['store'])
+                              }
+                              else{
+                                this._login.logout()
+                              }
+                            }
+                          )
+                        }
+                      )
                     },
                     (error)=>{
                       this._snack.open("Internal Server Error","",{duration:3000})

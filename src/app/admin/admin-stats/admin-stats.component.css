@@ -2,9 +2,9 @@
 .stats-container{
     height: 95vh;
     background-image: url("../../../assets/images/admin-dashboard.jpg");
+    background-image: url("../../../assets/images/about_background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    border: 1px solid red;
     margin-top: 10px;
     border-radius: 7px;
     padding: 10px;

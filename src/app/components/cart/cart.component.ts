@@ -40,6 +40,8 @@ export class CartComponent {
       (data:any)=>{
         this.user_cart=data
 
+        console.log(this.user_cart)
+
         this.user_cart=(this.user.cart.length!=0?this.user.cart:null)
 
         if(this.user_cart!=null){

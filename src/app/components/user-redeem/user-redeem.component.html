@@ -1,0 +1,14 @@
+<div class="parent-container">
+    <div class="redeem-container">
+        <div class="heading">Redeem game</div>
+        
+        <mat-form-field style="width: 95%; margin: auto;" class="full-width custom-bg" appearance="fill" color="primary" >
+            <input type="text" matInput name="gamename" placeholder="enter the code" [(ngModel)]="code"  required>
+        </mat-form-field>
+
+        <div style="text-align: center;">
+            <button mat-raised-button color="primary" (click)="redeemCode()">Redeem</button>
+        </div>
+
+    </div>
+</div>

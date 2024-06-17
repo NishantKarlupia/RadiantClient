@@ -1,0 +1,14 @@
+<div class="parent-container">
+    <div class="code-container">
+        <div class="heading">Your Codes</div>
+        
+        <div *ngFor="let code of codes">
+           <h3>{{code}}</h3>
+        </div>
+
+        <div *ngIf="codes.length==0">
+            <h2>No codes to show</h2>
+        </div>
+
+    </div>
+</div>

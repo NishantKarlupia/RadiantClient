@@ -1,0 +1,16 @@
+.redeem-container{
+    background-color: #1b2d3d;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+
+}
+
+.heading{
+    /* border: 1px solid red; */
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+}

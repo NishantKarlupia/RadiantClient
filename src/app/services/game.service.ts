@@ -46,6 +46,10 @@ export class GameService {
     return this._http.put(`${baseUrl}/users/addtocart/${userId}/${gameId}`,userId);
   }
 
+  public removeFromCart(userId:any,gameId:any){
+    return this._http.delete(`${baseUrl}/users/removefromcart/${userId}/${gameId}`)
+  }
+
   public createTransaction(amount:any){
     return this._http.get(`${baseUrl}/users/createTransaction/${amount}`)
   }
@@ -56,6 +60,18 @@ export class GameService {
   
   public searchGame(gamename:any){
     return this._http.get(`${baseUrl}/games/search/${gamename}`)
+  }
+
+  public buyGift(data:any){
+    return this._http.post(`${baseUrl}/gift/buy`,data);
+  }
+
+  public redeemGift(code:String,userId:String){
+    return this._http.get(`${baseUrl}/gift/redeem/${code}/${userId}`);
+  }
+
+  public getUserCodes(userId:String){
+    return this._http.get(`${baseUrl}/gift/codes/${userId}`);
   }
 
 

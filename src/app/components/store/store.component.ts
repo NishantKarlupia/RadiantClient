@@ -105,6 +105,7 @@ export class StoreComponent {
   }
 
   navigateToGame(gid:any){
+    this._router.navigate(["/game/"+gid])
   }
 
 

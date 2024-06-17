@@ -61,7 +61,7 @@ export class AddAnswerComponent {
     this._question.addAnswer(this.answerData).subscribe(
       (data)=>{
         this._toast.info("answer added successfully","",{
-          progressBar:true,
+          progressBar:false,
           closeButton:true,
           timeOut:2000
         })

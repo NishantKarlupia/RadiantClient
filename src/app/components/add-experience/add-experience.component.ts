@@ -53,7 +53,7 @@ export class AddExperienceComponent {
     this._expService.addExperience(formData).subscribe(
       (data)=>{
           this._toast.info("achievement added!!!","",{
-          progressBar:true,
+          progressBar:false,
           closeButton:true,
           timeOut:2000
         })

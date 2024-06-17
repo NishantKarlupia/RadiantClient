@@ -25,6 +25,10 @@ import { CartComponent } from './components/cart/cart.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { UserGamesComponent } from './components/user-games/user-games.component';
 import { UserCartComponent } from './components/user-cart/user-cart.component';
+import { adminGuard } from './services/admin.guard';
+import { userGuard } from './services/user.guard';
+import { UserRedeemComponent } from './components/user-redeem/user-redeem.component';
+import { UserCodesComponent } from './components/user-codes/user-codes.component';
 
 const routes: Routes = [
   {
@@ -112,10 +116,16 @@ const routes: Routes = [
   {
     path:"user",
     component:UserProfileComponent,
+    canActivate:[userGuard],
     children:[
       {
         path:"details",
         component:UserDetailsComponent,
+        pathMatch:"full"
+      },
+      {
+        path:"",
+        component:UserGamesComponent,
         pathMatch:"full"
       },
       {
@@ -126,6 +136,16 @@ const routes: Routes = [
       {
         path:"cart",
         component:UserCartComponent,
+        pathMatch:"full"
+      },
+      {
+        path:"redeem",
+        component:UserRedeemComponent,
+        pathMatch:"full"
+      },
+      {
+        path:"codes",
+        component:UserCodesComponent,
         pathMatch:"full"
       }
     ]
@@ -143,6 +163,7 @@ const routes: Routes = [
   {
     path:"admin",
     component:AdminDashboardComponent,
+    canActivate:[adminGuard],
     children:[
       {
         path:"",

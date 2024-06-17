@@ -78,7 +78,7 @@
 
 <div class="buy-cart-container" *ngIf="gameData">
   <div class="text-heading">
-    Buy {{gameData.gamename}}
+    Buy {{gameData.gamename}}  
   </div>
   <div class="buy-options">
     <span class="buy-game-price"> {{gameData.price-(gameData.price*gameData.discount/100) | currency:"INR"}} </span>
@@ -87,6 +87,10 @@
     <span class="buy-add-cart" (click)="addToCart(user,gameData)" *ngIf="!alreadyOwned && !alreadyInCart"> Add to Cart </span>
     <span class="buy-add-cart" *ngIf="!alreadyOwned && alreadyInCart"> <a routerLink="/checkout" style="text-decoration: none;">In Cart</a>  </span>
   </div>  
+  </div>
+
+<div style="margin-top: 10px;" class="buy-cart-container">
+  <button mat-raised-button color="primary" (click)="buyGift()">Buy Gift</button> 
 </div>
 
 <div class="requirements" *ngIf="gameData">

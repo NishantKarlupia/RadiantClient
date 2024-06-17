@@ -3,6 +3,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { AdminService } from '../../services/admin.service';
 import Swal from 'sweetalert2';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class AdminAddgameComponent {
 
   public Editor = ClassicEditor;
 
-  constructor(private _service:AdminService, private _snack:MatSnackBar){}
+  constructor(private _service:AdminService, private _snack:MatSnackBar,private _toast:ToastrService){}
 
   coverImage!:File ;
   gamePlayImages!:File[];
@@ -47,6 +48,18 @@ export class AdminAddgameComponent {
     // console.log(this.gameData)
     // console.log(this.coverImage)
     // console.log(this.gamePlayImages)
+
+    for(let key of Object.keys(this.gameData)){
+      // console.log(key+" "+this.gameData[key])
+      if(this.gameData[key]===""){
+        this._toast.info("Please enter "+ key,"",{
+          progressBar:true,
+          closeButton:true,
+          timeOut:1000
+        })
+        return
+      }
+    }
 
 
     const formData=new FormData()

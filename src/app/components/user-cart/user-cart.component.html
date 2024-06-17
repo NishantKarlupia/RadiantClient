@@ -10,14 +10,18 @@
                     <div class="col-md-10 right">
                         <div class="line">
                             <div>{{game.gamename}}</div>
+                            <div>
+                                <a style="cursor: pointer;" (click)="removeItemFromCart(game.gid)">remove</a>
+                            </div>
                         </div>
                         <div class="line">
                             <div style="font-family: consolas;"> {{game.categories}} </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
-            <div style="text-align: center;">
+            <div *ngIf="games!=null || games.length!=0" style="text-align: center;">
                 <button mat-raised-button color="primary" routerLink="/checkout">Checkout</button>
             </div>
         </div>

@@ -19,7 +19,11 @@ export class UserCartComponent {
   ngOnInit(){
     this.user=this._login.getUser()
 
+    this.getUserCartItems()
 
+  }
+
+  getUserCartItems(){
     this._user.getUserCartItems(this.user.uid).subscribe(
       (data:any)=>{
         this.games=data
@@ -35,10 +39,20 @@ export class UserCartComponent {
       },
       (error)=>{}
     )
-
-
   }
 
   navigateToGame(gid:any){}
+
+  removeItemFromCart(gid:any){
+
+
+    this._game.removeFromCart(this.user.uid,gid).subscribe(
+      (data:any)=>{
+        this.getUserCartItems()
+      },
+      (error)=>{}
+    )
+
+  }
 
 }
